@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import users from "../common/users.json";
 import SearchBar from "./SearchBar";
 import { Link, useParams } from "react-router-dom";
+import AddConversation from "./AddConversation";
 
-const AllChats = () => {
+const AllChats = ({ activeChats = {} }) => {
+  const [activeUsers, setActiveUsers] = useState([]);
   const [searchedUser, setSearchedUser] = useState([]);
   const { id } = useParams();
 
+  useEffect(() => {
+    const activeUserIds = Object.keys(activeChats);
+
+    const filteredData = users.filter((user) =>
+      activeUserIds.includes(user.userId)
+    );
+
+    setActiveUsers(filteredData);
+  }, [activeChats]);
+
   return (
     <div className="h-[95%] bg-[#FFFF] m-4 p-4">
-      <SearchBar users={users} setSearchedUser={setSearchedUser} />
+      <SearchBar users={activeUsers} setSearchedUser={setSearchedUser} />
+      <AddConversation />
       <div className="flex flex-col gap-[15px]">
         {searchedUser?.map(({ userName, userId, profilePic }) => {
           const isActive = id === userId;

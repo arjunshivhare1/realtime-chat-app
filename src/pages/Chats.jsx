@@ -10,6 +10,7 @@ const Chats = () => {
   const [selectedUser, setSelectedUser] = useState({});
   const [changeState, setChangeState] = useState(false);
 
+  const activeChats = useSelector((state) => state) ?? {};
   const chatMessages = useSelector((state) => state[id]) ?? [];
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const Chats = () => {
   return (
     <div className="w-screen h-screen bg-[#dddd] flex">
       <div className="w-[25%] overflow-hidden">
-        <AllChats />
+        <AllChats activeChats={activeChats} />
       </div>
       <div className="w-[74%] h-[95%] bg-[#FFFF] my-4 p-4">
         {!id ? (

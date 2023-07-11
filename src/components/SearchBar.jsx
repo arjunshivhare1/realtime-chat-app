@@ -6,7 +6,7 @@ const SearchBar = (props) => {
 
   useEffect(() => {
     setSearchedUser(users);
-  }, []);
+  }, [users]);
 
   const filteredConversations = (e) => {
     const searchQuery = e.target.value;
@@ -20,7 +20,7 @@ const SearchBar = (props) => {
   return (
     <input
       type="text"
-      className="w-full h-12 rounded px-3 text-lg bg-[#dddd] mb-8"
+      className="w-full h-12 rounded px-3 text-lg bg-[#dddd] mb-4"
       value={searchValue}
       placeholder="Search..."
       onChange={filteredConversations}
