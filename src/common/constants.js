@@ -40,7 +40,7 @@ export const USERS = [
 ];
 
 export const DEFAULT_MESSAGES = {
-  [USER_IDS_MAPPING.MARIAM]: [
+  [USER_IDS_MAPPING.PRIANKA_PACHERIA]: [
     {
       message: "Hi Prianka👋",
       delivered: new Date().toISOString().split("T")[0],
