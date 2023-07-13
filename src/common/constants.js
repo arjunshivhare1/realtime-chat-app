@@ -1,7 +1,7 @@
-export const USER_IDS_MAPPING = {
+const USER_IDS_MAPPING = {
   ARJUN_SHIVHARE: "2FaIJt44zTNtaWNaMeKV7C",
-  KISHAN_CHAUDHARY: "2FaIJw44zTNtaWwaMeKV7C",
-  PRIANKA_PACHERIA: "4FaILt44zTNtaWNaMeKV7C",
+  KISHAN_CHAUDHARY: "2Fa8829TNtaWNaMeKV7C",
+  PRIANKA_PACHERIA: "4FaILt4zTNtaWNaMeKV7C",
   SHILPA_VAVIA: "2FaJt44zTNtaWNaMeOPV7C",
   MARIAM: "2FaIJt44zTNtaWNaIPKV7C",
 };
@@ -15,7 +15,7 @@ export const USERS = [
   },
   {
     userName: "Kishan Chaudhary",
-    userId: USER_IDS_MAPPING.Kishan_Chaudhary,
+    userId: USER_IDS_MAPPING.KISHAN_CHAUDHARY,
     profilePic:
       "https://sialifehospital.com/wp-content/uploads/2021/04/testimonial-1.png",
   },
@@ -38,3 +38,26 @@ export const USERS = [
       "https://sialifehospital.com/wp-content/uploads/2021/04/testimonial-1.png",
   },
 ];
+
+export const DEFAULT_MESSAGES = {
+  [USER_IDS_MAPPING.MARIAM]: [
+    {
+      message: "Hi Prianka👋",
+      delivered: new Date().toISOString().split("T")[0],
+    },
+    {
+      message: "Hope you are doing great in life!🎯",
+      delivered: new Date().toISOString().split("T")[0],
+    },
+  ],
+  [USER_IDS_MAPPING.KISHAN_CHAUDHARY]: [
+    {
+      message: "Hey Kishan👋",
+      delivered: new Date().toISOString().split("T")[0],
+    },
+    {
+      message: "What are you doing?",
+      delivered: new Date().toISOString().split("T")[0],
+    },
+  ],
+};

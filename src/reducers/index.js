@@ -1,6 +1,9 @@
 import { ADD_MESSAGE } from "../actions/index";
+import { DEFAULT_MESSAGES } from "../common/constants";
 
-const initialState = {};
+const initialState = {
+  ...DEFAULT_MESSAGES,
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
