@@ -28,7 +28,7 @@ const Conversation = ({ userName, chats = [], setChangeState }) => {
           </div>
         ) : (
           <h1 className="text-3xl font-bold underline flex justify-center">
-            Yay! Let's start a new chat
+            No messages found
           </h1>
         )}
       </div>

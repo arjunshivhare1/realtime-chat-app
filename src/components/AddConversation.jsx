@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import USERS from "../common/users.json";
+import { USERS } from "../common/constants";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addMessage } from "../actions";

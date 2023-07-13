@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import users from "../common/users.json";
+import { USERS } from "../common/constants";
 import SearchBar from "./SearchBar";
 import { Link, useParams } from "react-router-dom";
 import AddConversation from "./AddConversation";
@@ -12,7 +12,7 @@ const AllChats = ({ activeChats = {} }) => {
   useEffect(() => {
     const activeUserIds = Object.keys(activeChats);
 
-    const filteredData = users.filter((user) =>
+    const filteredData = USERS.filter((user) =>
       activeUserIds.includes(user.userId)
     );
 

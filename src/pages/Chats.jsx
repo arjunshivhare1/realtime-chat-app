@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import users from "../common/users.json";
+import { USERS } from "../common/constants";
 import AllChats from "../components/AllChats";
 import Conversation from "../components/Conversation";
 import { useSelector } from "react-redux";
@@ -14,7 +14,7 @@ const Chats = () => {
   const chatMessages = useSelector((state) => state[id]) ?? [];
 
   useEffect(() => {
-    const userData = users.find((user) => user.userId === id);
+    const userData = USERS.find((user) => user.userId === id);
     setSelectedUser(userData);
   }, [id]);
 
