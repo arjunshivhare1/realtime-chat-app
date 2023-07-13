@@ -8,7 +8,7 @@ const Conversation = ({ userName, chats = [], setChangeState }) => {
     if (latestMessageRef.current) {
       latestMessageRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, []);
+  }, [chats]);
 
   return (
     <div className="h-[100%] flex flex-col bg-gray-100">
