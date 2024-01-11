@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Chats from "./pages/Chats";
+import Home from "./pages/Home/Home";
+import Chats from "./pages/Chats/Chats";
 
 const App = () => (
   <BrowserRouter>

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { USERS } from "../common/constants";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addMessage } from "../actions";
 
 const AddConversation = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -27,11 +25,9 @@ const AddConversation = () => {
 export default AddConversation;
 
 const PopupModal = ({ isOpen, onClose }) => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleClick = (userId) => {
-    dispatch(addMessage(userId));
     navigate(`/chats/${userId}`);
     onClose();
   };

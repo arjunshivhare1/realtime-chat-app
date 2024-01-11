@@ -1,10 +1,7 @@
 import { useState } from "react";
-import { addMessage } from "../actions";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
 
 const TextBar = ({ setChangeState }) => {
-  const dispatch = useDispatch();
   const { id } = useParams();
   const [message, setMessage] = useState("");
 
@@ -15,7 +12,6 @@ const TextBar = ({ setChangeState }) => {
   };
 
   const handleSendMessage = () => {
-    dispatch(addMessage(id, message));
     setMessage("");
     setChangeState((state) => !state);
   };

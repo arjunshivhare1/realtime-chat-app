@@ -3,15 +3,11 @@ import { useParams } from "react-router-dom";
 import { USERS } from "../common/constants";
 import AllChats from "../components/AllChats";
 import Conversation from "../components/Conversation";
-import { useSelector } from "react-redux";
 
 const Chats = () => {
   const { id } = useParams();
   const [selectedUser, setSelectedUser] = useState({});
   const [changeState, setChangeState] = useState(false);
-
-  const activeChats = useSelector((state) => state) ?? {};
-  const chatMessages = useSelector((state) => state[id]) ?? [];
 
   useEffect(() => {
     const userData = USERS.find((user) => user.userId === id);
@@ -21,7 +17,7 @@ const Chats = () => {
   return (
     <div className="w-screen h-screen bg-[#dddd] flex">
       <div className="w-[25%] overflow-hidden">
-        <AllChats activeChats={activeChats} />
+        <AllChats activeChats={{}} />
       </div>
       <div className="w-[74%] h-[95%] bg-[#FFFF] my-4 p-4">
         {!id ? (
@@ -35,7 +31,7 @@ const Chats = () => {
         ) : (
           <Conversation
             userName={selectedUser?.userName}
-            chats={chatMessages}
+            chats={[]}
             setChangeState={setChangeState}
           />
         )}
